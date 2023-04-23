@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ecocleaner_v2/widget/bottomnavbar.dart';
 import 'package:ecocleaner_v2/widget/post_templet.dart';
 import 'package:ecocleaner_v2/widget/searhfiled.dart';
 
@@ -14,7 +13,9 @@ class Home extends StatelessWidget {
       ),
       body: Column(
         children: const [
+          SizedBox(height: 15),
           SearchField(),
+          SizedBox(height: 25),
           PostTemplate(
             image1Url: 'assets/images/2.jpg',
             image2Url: 'assets/images/3.jpg',
@@ -34,7 +35,6 @@ class Home extends StatelessWidget {
               image2Url: 'assets/images/7.jpg'),
         ],
       ),
-      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

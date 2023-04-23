@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 
 class SearchField extends StatefulWidget {
-  const SearchField({Key? key}) : super(key: key);
+  //final Function(String) onTextChanged;
+
+  const SearchField({
+    Key? key,
+    // required this.onTextChanged,
+  }) : super(key: key);
+
   @override
-  State<SearchField> createState() => _SearchFieldState();
+  // ignore: library_private_types_in_public_api
+  _OptimalSearchFieldState createState() => _OptimalSearchFieldState();
 }
 
-class _SearchFieldState extends State<SearchField> {
-  final _searchController = TextEditingController();
+class _OptimalSearchFieldState extends State<SearchField> {
+  final TextEditingController _searchController = TextEditingController();
+
   @override
   void dispose() {
     _searchController.dispose();
@@ -24,18 +32,20 @@ class _SearchFieldState extends State<SearchField> {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(15.0),
-        border: Border.all(color: Colors.grey.withOpacity(0.3)),
+        borderRadius: BorderRadius.circular(
+            15.0), // Change the value to make the border more or less circular
+        border: Border.all(
+            color:
+                Colors.grey.withOpacity(0.3)), // Change the color of the border
       ),
       child: TextField(
         controller: _searchController,
+        //onChanged: widget.onTextChanged,
         decoration: const InputDecoration(
-          hintText: 'write for helping in cleaning...',
+          hintText: 'write a post...',
           border: InputBorder.none,
-          suffixIcon: Icon(Icons.search),
         ),
         keyboardType: TextInputType.text,
-        textInputAction: TextInputAction.search,
         autocorrect: true,
         autofillHints: const [AutofillHints.name],
         enableSuggestions: true,

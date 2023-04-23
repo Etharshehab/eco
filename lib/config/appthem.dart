@@ -15,5 +15,15 @@ ThemeData appTheme() {
         statusBarBrightness: Brightness.light,
       ),
     ),
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+          color: Color.fromRGBO(49, 204, 149, 1)),
+      displayMedium: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color: Color.fromARGB(255, 88, 87, 87)),
+    ),
   );
 }

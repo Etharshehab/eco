@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ecocleaner_v2/view/screen/achivement.dart';
+import 'package:ecocleaner_v2/view/screen/community.dart';
+import 'package:ecocleaner_v2/view/screen/profile.dart';
 
 import '../view/screen/home.dart';
 
@@ -11,29 +14,41 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _MyBottomNavigationBarState extends State<BottomNavBar> {
-  int _selectedIndex = 0;
-
-  static final List<Widget> _widgetOptions = <Widget>[
-    const Home(),
-  ];
-
-  void _onItemTapped(int index) {
+  int currentIndex = 0;
+  bool isSelected = false;
+  onNavItemTap(index) {
     setState(() {
-      _selectedIndex = index;
+      currentIndex = index;
+      isSelected = true;
     });
+    onItemTap(int index) {
+      setState(() {
+        Navigator.pop(context);
+        currentIndex = index;
+      });
+    }
   }
+
+  List<Widget> screen = [
+    const Home(),
+    const Community(),
+    const Avhivement(),
+    const Profile(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      body: screen[currentIndex], // return the selected screen widget
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.grey,
+        currentIndex: currentIndex,
+        onTap: (index) {
+          onNavItemTap(index);
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -52,8 +67,6 @@ class _MyBottomNavigationBarState extends State<BottomNavBar> {
             label: '',
           ),
         ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
       ),
     );
   }

@@ -1,5 +1,6 @@
-import 'package:ecocleaner_v2/widget/bottomnavbar.dart';
+// import 'package:ecocleaner_v2/widget/bottomnavbar.dart';
 import 'package:flutter/material.dart';
+import 'package:ecocleaner_v2/view/screen/login.dart';
 
 import 'config/appthem.dart';
 
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'ecocleaner_v2',
       theme: appTheme(),
-      home: const BottomNavBar(),
+      home: const Login(),
     );
   }
 }
+
+String getAsset(String image) => 'assets/images/$image.png';
