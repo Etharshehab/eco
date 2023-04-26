@@ -1,5 +1,7 @@
+import 'package:ecocleaner_v2/view/screen/community.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/bottomnavbar.dart';
 import '../../widget/cover.dart';
 import '../../widget/post_templet2.dart';
 import '../../widget/searchfield.dart';
@@ -14,7 +16,12 @@ class Charities extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const LayoutScreen(),
+              ),
+            );
           },
         ),
         actions: [

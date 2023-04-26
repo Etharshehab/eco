@@ -1,10 +1,14 @@
 // import 'package:ecocleaner_v2/widget/bottomnavbar.dart';
+import 'package:ecocleaner_v2/view/screen/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ecocleaner_v2/view/screen/login.dart';
 
 import 'config/appthem.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -18,9 +22,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'ecocleaner_v2',
       theme: appTheme(),
-      home: const Login(),
+      home: const Auth(),
     );
   }
 }
 
-String getAsset(String image) => 'assets/images/$image.png';
+String getAsset(String image) => 'assets/images/$image.jpg';

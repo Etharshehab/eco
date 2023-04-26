@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../../config/my_text.dart';
-import '../../main.dart';
 import '../../widget/custom_appbar2.dart';
 import '../../widget/recommended_item.dart';
 
@@ -17,6 +15,7 @@ class _CommunityState extends State<Community> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
@@ -33,13 +32,14 @@ class _CommunityState extends State<Community> {
               const SizedBox(
                 height: 5.0,
               ),
-              SizedBox(
+              Container(
+                color: Colors.grey[200],
                 height: 400,
                 child: ListView.builder(
                     itemCount: 2,
                     itemBuilder: (BuildContext context, int index) {
                       return CustomRecommendedContainer(
-                        image: getAsset(images[index]),
+                        image: images[index],
                         name: names[index],
                         place: places[index],
                         time: times[index],

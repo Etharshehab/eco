@@ -1,8 +1,10 @@
+import 'package:ecocleaner_v2/widget/bottomnavbar.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/cover.dart';
 import '../../widget/post_templet2.dart';
 import '../../widget/searchfield.dart';
+import 'community.dart';
 
 class Cleaning extends StatelessWidget {
   const Cleaning({super.key});
@@ -14,7 +16,10 @@ class Cleaning extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const LayoutScreen()),
+            );
           },
         ),
         actions: [

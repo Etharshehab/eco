@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../widget/bottomnavbar.dart';
 import '../../widget/cover.dart';
 import '../../widget/post_templet2.dart';
 import '../../widget/searchfield.dart';
+import 'community.dart';
 
 class Painting extends StatelessWidget {
   const Painting({super.key});
@@ -13,7 +15,10 @@ class Painting extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const LayoutScreen()),
+            );
           },
         ),
         actions: [

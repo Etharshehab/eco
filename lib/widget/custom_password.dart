@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import '../view/screen/login.dart';
 
-class CustomPassword extends StatelessWidget {
+class CustomPassword extends StatefulWidget {
   const CustomPassword({super.key});
 
   @override
+  State<CustomPassword> createState() => CustomPasswordState();
+}
+
+class CustomPasswordState extends State<CustomPassword> {
+  @override
   Widget build(BuildContext context) {
-    return const TextField(
+    return TextField(
+      controller: passwordController,
       keyboardType: TextInputType.visiblePassword,
       obscureText: true,
       textAlign: TextAlign.start,

@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
-class CustomEmail extends StatelessWidget {
-  const CustomEmail({
-    super.key,
-  });
+import '../view/screen/login.dart';
 
+class CustomEmail extends StatefulWidget {
+  const CustomEmail({super.key});
+
+  @override
+  State<CustomEmail> createState() => CustomEmailState();
+}
+
+class CustomEmailState extends State<CustomEmail> {
   @override
   Widget build(BuildContext context) {
     return const TextField(
+      controller: emailController,
       keyboardType: TextInputType.emailAddress,
       textAlign: TextAlign.start,
       decoration: InputDecoration(

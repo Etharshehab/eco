@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ecocleaner_v2/view/screen/achivement.dart';
 import 'package:ecocleaner_v2/view/screen/community.dart';
@@ -5,15 +6,16 @@ import 'package:ecocleaner_v2/view/screen/profile.dart';
 
 import '../view/screen/home.dart';
 
-class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({Key? key}) : super(key: key);
+class LayoutScreen extends StatefulWidget {
+  const LayoutScreen({Key? key}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
   _MyBottomNavigationBarState createState() => _MyBottomNavigationBarState();
 }
 
-class _MyBottomNavigationBarState extends State<BottomNavBar> {
+class _MyBottomNavigationBarState extends State<LayoutScreen> {
+  final user = FirebaseAuth.instance.currentUser!;
   int currentIndex = 0;
   bool isSelected = false;
   onNavItemTap(index) {

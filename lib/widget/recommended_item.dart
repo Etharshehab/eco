@@ -21,16 +21,26 @@ class CustomRecommendedContainer extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
-        color: Colors.grey[400],
+        color: Colors.white,
         borderRadius: BorderRadius.circular(15.0),
       ),
       child: Row(
         children: [
           Column(children: [
-            Image.asset(
-              image,
-              height: 70,
-              width: 70,
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15.0),
+                border: Border.all(
+                  color: Colors.greenAccent.shade700,
+                ),
+              ),
+              child: Image.asset(
+                image,
+                height: 150,
+                width: 130,
+                fit: BoxFit.cover,
+              ),
             ),
           ]),
           Padding(
@@ -47,9 +57,9 @@ class CustomRecommendedContainer extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.location_on,
-                      color: Colors.greenAccent.shade700,
+                      color: Color.fromRGBO(49, 204, 149, 1),
                     ),
                     MyText(
                       data: place,
@@ -62,9 +72,9 @@ class CustomRecommendedContainer extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.timelapse,
-                      color: Colors.greenAccent.shade700,
+                      color: Color.fromRGBO(49, 204, 149, 1),
                     ),
                     MyText(
                       data: time,

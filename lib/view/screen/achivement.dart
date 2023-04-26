@@ -54,9 +54,9 @@ class _AchievementsViewState extends State<Avhivement> {
 }
 
 List images = [
-  "/assets/images/6.jpg",
-  "/assets/images/7.jpg",
-  "/assets/images/8.jpg",
+  "assets/images/6.jpg",
+  "assets/images/7.jpg",
+  "assets/images/8.jpg",
 ];
 
 List<String> services = [

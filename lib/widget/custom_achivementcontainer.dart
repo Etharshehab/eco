@@ -29,7 +29,20 @@ class CustomAchievementContainer extends StatelessWidget {
       child: Row(
         children: [
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Image.asset(image),
+            Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15.0),
+                  border: Border.all(
+                    color: Colors.greenAccent.shade700,
+                  ),
+                ),
+                height: 150,
+                width: 130.0,
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                )),
           ]),
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -47,7 +60,7 @@ class CustomAchievementContainer extends StatelessWidget {
                   children: [
                     const Icon(
                       Icons.location_on,
-                     color:  Color.fromRGBO(49, 204, 149, 1),
+                      color: Color.fromRGBO(49, 204, 149, 1),
                     ),
                     MyText(
                       data: address,
@@ -62,7 +75,7 @@ class CustomAchievementContainer extends StatelessWidget {
                   children: [
                     const Icon(
                       Icons.date_range_rounded,
-                      color:  Color.fromRGBO(49, 204, 149, 1),
+                      color: Color.fromRGBO(49, 204, 149, 1),
                     ),
                     MyText(
                       data: date,
@@ -77,7 +90,7 @@ class CustomAchievementContainer extends StatelessWidget {
                   children: [
                     const Icon(
                       Icons.person,
-                      color:  Color.fromRGBO(49, 204, 149, 1),
+                      color: Color.fromRGBO(49, 204, 149, 1),
                     ),
                     MyText(
                       data: name,

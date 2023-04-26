@@ -132,7 +132,7 @@ class SignUp extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const BottomNavBar()));
+                                builder: (context) => const LayoutScreen()));
                       },
                       child: const Text(
                         "Sign up",

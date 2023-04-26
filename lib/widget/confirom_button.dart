@@ -35,10 +35,11 @@ class ConfirmButton extends StatelessWidget {
         borderRadius: _borderRadius,
         onTap: onPressed,
         child: Container(
+          width: 100,
           alignment: Alignment.center,
           padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
-            color: backgroundColor ?? Colors.greenAccent.shade700,
+            color: backgroundColor ?? const Color.fromRGBO(49, 204, 149, 1),
             borderRadius: _borderRadius,
             border: Border.all(
               color: borderColor ?? Colors.greenAccent.shade700,
@@ -46,8 +47,8 @@ class ConfirmButton extends StatelessWidget {
           ),
           child: MyText(
             data: title,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
             color: titleColor ?? Colors.white,
           ),
         ),
