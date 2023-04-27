@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ecocleaner_v2/view/screen/achivement.dart';
 import 'package:ecocleaner_v2/view/screen/community.dart';
@@ -15,7 +14,6 @@ class LayoutScreen extends StatefulWidget {
 }
 
 class _MyBottomNavigationBarState extends State<LayoutScreen> {
-  final user = FirebaseAuth.instance.currentUser!;
   int currentIndex = 0;
   bool isSelected = false;
   onNavItemTap(index) {

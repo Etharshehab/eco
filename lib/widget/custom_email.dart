@@ -13,7 +13,6 @@ class CustomEmailState extends State<CustomEmail> {
   @override
   Widget build(BuildContext context) {
     return const TextField(
-      controller: emailController,
       keyboardType: TextInputType.emailAddress,
       textAlign: TextAlign.start,
       decoration: InputDecoration(

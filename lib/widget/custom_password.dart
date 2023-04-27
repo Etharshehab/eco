@@ -11,8 +11,7 @@ class CustomPassword extends StatefulWidget {
 class CustomPasswordState extends State<CustomPassword> {
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: passwordController,
+    return const TextField(
       keyboardType: TextInputType.visiblePassword,
       obscureText: true,
       textAlign: TextAlign.start,

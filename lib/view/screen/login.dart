@@ -1,5 +1,4 @@
 import 'package:ecocleaner_v2/view/screen/signup.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ecocleaner_v2/widget/custom_email.dart';
 
@@ -17,11 +16,6 @@ class Login extends StatefulWidget {
 class LoginState extends State<Login> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim());
-  }
 
   @override
   Widget build(BuildContext context) {
